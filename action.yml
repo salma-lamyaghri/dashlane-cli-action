@@ -16,7 +16,7 @@ runs:
       run: ${GITHUB_ACTION_PATH}/install-cli.sh}
       shell: bash
     # Get credentials from env variables
-    # run the cli command and eco the output to Github Output
+    # run the dcli read command and eco the output to Github Output
     - name: Run script
       run: ${GITHUB_ACTION_PATH}/script.sh ${{ inputs.path }}}
       shell: bash
