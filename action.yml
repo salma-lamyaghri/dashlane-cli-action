@@ -1,0 +1,22 @@
+name: Load secrets from Dashlane
+description: Makes it possible to inject secrets from your vault in a CI using the Dashlane CLI.
+author: Dashlane
+branding:
+  icon: key
+  color: grey
+inputs:
+  path:
+    description: path to the secret indentifier
+    required: true
+runs:
+  using: composite
+  steps:
+    # install cli
+    - name: Install cli
+      run: ${GITHUB_ACTION_PATH}/install-cli.sh}
+      shell: bash
+    # Get credentials from env variables
+    # run the cli command and eco the output to Github Output
+    - name: Run script
+      run: ${GITHUB_ACTION_PATH}/script.sh ${{ inputs.path }}}
+      shell: bash
