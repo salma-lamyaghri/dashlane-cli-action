@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "SECRET -> $(printenv $1)";
+echo "ACTION_SECRET -> $(printenv $1)";
 
 assert_secret() {
   if [ "$(printenv $1)" != "$2" ]; then
@@ -10,6 +10,6 @@ assert_secret() {
   fi
 }
 
-assert_secret "SECRET" "action_test"
+assert_secret "ACTION_SECRET" "action_test"
 
 
