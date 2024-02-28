@@ -12,6 +12,7 @@ jobs:
       - name: Load secrets
         id: load_secrets
         uses: ./ # Dashlane/github-action@<version>
+        secrets: inherit
         env:
           SECRET: dl://331CB092-FECF-49F5-A8B6-5279BC543011/password
       - name: Assert test secret values
