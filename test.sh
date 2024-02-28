@@ -2,7 +2,7 @@
 set -e
 
 echo "ACTION_SECRET -> $ACTION_SECRET";
-echo "value 1-> ${1}";
+echo "value 1-> $(printenv $1)";
 echo "value 1-> $2";
 assert_secret() {
   if [ "$(printenv $1)" != "$2" ]; then
