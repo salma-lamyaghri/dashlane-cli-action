@@ -9,7 +9,7 @@ runs:
   steps:
     # install cli
     - name: Install cli
-      run: ./install-cli.sh
+      run: ./install.sh
       shell: bash
     # Get credentials from env variables
     # run the dcli read command and eco the output to Github Output
