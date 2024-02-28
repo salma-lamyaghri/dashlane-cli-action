@@ -4,12 +4,18 @@ on: push
 
 jobs:
   test_action:
-     - name: Load secrets
+    name: Load secrets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Load secrets
         id: load_secrets
         uses: ./ # Dashlane/github-action@<version>
         env:
           SECRET: dl://331CB092-FECF-49F5-A8B6-5279BC543011/password
-     - name: Assert test secret values
+      - name: Assert test secret values
+        runs-on: ubuntu-latest
         env:
           SECRET: ${{ steps.load_secrets.outputs.SECRET }}
         run: ./tests/assert-env-set.sh
