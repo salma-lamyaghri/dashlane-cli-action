@@ -1,0 +1,1 @@
+wget https://github.com/Dashlane/dashlane-cli/archive/refs/tags/v6.2405.0.zip
