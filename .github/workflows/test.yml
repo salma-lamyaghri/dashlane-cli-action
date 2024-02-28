@@ -12,9 +12,12 @@ jobs:
       - name: Load secrets
         id: load_secrets
         uses: ./ # Dashlane/github-action@<version>
-        secrets: inherit
         env:
           SECRET: dl://331CB092-FECF-49F5-A8B6-5279BC543011/password
+          DASHLANE_DEVICE_ACCESS_KEY: ${{ secrets.DASHLANE_DEVICE_ACCESS_KEY }}
+          DASHLANE_DEVICE_SECRET_KEY: ${{ secrets.DASHLANE_DEVICE_SECRET_KEY }}
+          DASHLANE_LOGIN: ${{ secrets.DASHLANE_LOGIN }}
+          DASHLANE_MASTER_PASSWORD: ${{ secrets.DASHLANE_MASTER_PASSWORD }}
       - name: Assert test secret values
         env:
           SECRET: ${{ steps.load_secrets.outputs.SECRET }}
