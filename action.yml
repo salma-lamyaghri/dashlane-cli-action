@@ -13,7 +13,7 @@ runs:
       shell: bash
     # Get credentials from env variables
     # run the dcli read command and eco the output to Github Output
-    - name: Run scrip
+    - name: Run script
       env:
         DASHLANE_DEVICE_ACCESS_KEY: ${{secrets.DASHLANE_DEVICE_ACCESS_KEY}}
         DASHLANE_DEVICE_SECRET_KEY: ${{secrets.DASHLANE_DEVICE_SECRET_KEY}}
