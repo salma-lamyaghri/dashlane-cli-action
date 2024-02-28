@@ -21,4 +21,4 @@ jobs:
       - name: Assert test secret values
         env:
           SECRET: ${{ steps.load_secrets.outputs.SECRET }}
-        run: ./tests/assert-env-set.sh
+        run: ./test.sh
