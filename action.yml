@@ -16,10 +16,10 @@ runs:
     - name: Run script
       shell: bash
       env:
-        DASHLANE_DEVICE_ACCESS_KEY: ${{secrets.DASHLANE_DEVICE_ACCESS_KEY}}
-        DASHLANE_DEVICE_SECRET_KEY: ${{secrets.DASHLANE_DEVICE_SECRET_KEY}}
-        DASHLANE_LOGIN: ${{secrets.DASHLANE_LOGIN}}
-        DASHLANE_MASTER_PASSWORD: ${{secrets.DASHLANE_MASTER_PASSWORD}}
+        DASHLANE_DEVICE_ACCESS_KEY: ${{ secrets.DASHLANE_DEVICE_ACCESS_KEY }}
+        DASHLANE_DEVICE_SECRET_KEY: ${{ secrets.DASHLANE_DEVICE_SECRET_KEY }}
+        DASHLANE_LOGIN: ${{ secrets.DASHLANE_LOGIN }}
+        DASHLANE_MASTER_PASSWORD: ${{ secrets.DASHLANE_MASTER_PASSWORD }}
       run: | 
       ./script.sh
       
