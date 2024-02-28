@@ -4,19 +4,20 @@ author: Dashlane
 branding:
   icon: key
   color: grey
-inputs:
-  path:
-    description: path to the secret indentifier
-    required: true
 runs:
   using: composite
   steps:
     # install cli
     - name: Install cli
-      run: ${GITHUB_ACTION_PATH}/install-cli.sh}
+      run: ./install-cli.sh
       shell: bash
     # Get credentials from env variables
     # run the dcli read command and eco the output to Github Output
-    - name: Run script
-      run: ${GITHUB_ACTION_PATH}/script.sh ${{ inputs.path }}}
+    - name: Run scrip
+      env:
+        DASHLANE_DEVICE_ACCESS_KEY: ${{secrets.DASHLANE_DEVICE_ACCESS_KEY}}
+        DASHLANE_DEVICE_SECRET_KEY: ${{secrets.DASHLANE_DEVICE_SECRET_KEY}}
+        DASHLANE_LOGIN: ${{secrets.DASHLANE_LOGIN}}
+        DASHLANE_MASTER_PASSWORD: ${{secrets.DASHLANE_MASTER_PASSWORD}}
+      run: ./script.sh
       shell: bash
