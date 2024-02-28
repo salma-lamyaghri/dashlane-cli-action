@@ -11,6 +11,6 @@ for path in $env_variables; do
         # echo "reading password";
         # ./dcli read ${!path};
         echo "$path=$(./dcli read ${!path})"
-        echo "$path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT";
+        echo "export $path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT";
     fi;
 done

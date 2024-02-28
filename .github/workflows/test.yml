@@ -20,5 +20,5 @@ jobs:
           DASHLANE_MASTER_PASSWORD: ${{ secrets.DASHLANE_MASTER_PASSWORD }}
       - name: Assert test secret values
         env:
-          SECRET: ${{ steps.load_secrets.outputs.SECRET }}
+          SECRET: ${{ steps.load_secrets.get-secret.outputs.SECRET }}
         run: ./test.sh

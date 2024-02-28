@@ -8,11 +8,12 @@ runs:
   using: composite
   steps:
     # install cli
-    - name: Install cli
+    - name: install-cli
       run: ./install.sh
       shell: bash
     # Get credentials from env variables
     # run the dcli read command and eco the output to Github Output
-    - name: Run script
+    - name: get-secret
+      id: get-secret
       shell: bash
       run: ./script.sh
