@@ -20,6 +20,4 @@ runs:
         DASHLANE_DEVICE_SECRET_KEY: ${{ secrets.DASHLANE_DEVICE_SECRET_KEY }}
         DASHLANE_LOGIN: ${{ secrets.DASHLANE_LOGIN }}
         DASHLANE_MASTER_PASSWORD: ${{ secrets.DASHLANE_MASTER_PASSWORD }}
-      run: | 
-      ./script.sh
-      
+      run: ./script.sh
