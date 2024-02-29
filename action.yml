@@ -12,7 +12,7 @@ runs:
       run: ./install.sh
       shell: bash
     # Get credentials from env variables
-    # run the dcli read command and eco the output to Github Output
+    # run the dcli read command and echo the output to Github ENV
     - name: get-secret
       shell: bash
       run: ./script.sh
