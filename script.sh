@@ -10,6 +10,6 @@ for path in $env_variables; do
         echo "syncronizing .."
         ./dcli sync
         echo "reading password .. "
-        echo "$path=$(./dcli read ${!path})" >> "$GITHUB_ENV"
+        echo "$path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT"
     fi
 done
