@@ -5,7 +5,8 @@ branding:
   icon: key
   color: grey
 runs:
-  using: composite
+  using: node20
+  main: index.ts
   steps:
     # install cli
     - name: install-cli
