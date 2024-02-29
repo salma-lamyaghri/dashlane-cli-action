@@ -7,13 +7,3 @@ branding:
 runs:
   using: node20
   main: index.ts
-  steps:
-    # install cli
-    - name: install-cli
-      run: ./install.sh
-      shell: bash
-    # Get credentials from env variables
-    # run the dcli read command and echo the output to Github ENV
-    - name: get-secret
-      shell: bash
-      run: ./script.sh
