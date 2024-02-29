@@ -14,6 +14,5 @@ runs:
     # Get credentials from env variables
     # run the dcli read command and eco the output to Github Output
     - name: get-secret
-      id: get-secret
       shell: bash
       run: ./script.sh
