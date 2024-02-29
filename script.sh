@@ -12,6 +12,6 @@ for path in $env_variables; do
         # ./dcli read ${!path};
         echo "$path=$(./dcli read ${!path})"
         echo "{$path}={$(./dcli read ${!path})}"
-        echo "$path={$(./dcli read ${!path})}" >> "$GITHUB_OUTPUT";
+        echo "{$path}={$(./dcli read ${!path})}" >> "$GITHUB_OUTPUT";
     fi;
 done
