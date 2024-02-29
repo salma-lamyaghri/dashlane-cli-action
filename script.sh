@@ -8,10 +8,8 @@ for path in $env_variables; do
         # skipping dcli call temp
 
         echo "syncronizing .."
-        #./dcli sync
-        # ./dcli p -o json;
+        ./dcli sync
         echo "reading password .. "
-        #echo "$path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT"
-        echo "$path=action_test" >> "$GITHUB_OUTPUT";
+        echo "$path=$(./dcli read ${!path})" >> "$GITHUB_ENV"
     fi
 done
