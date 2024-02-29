@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-
 echo "value 1-> $(printenv $1)";
 echo "value 2-> $2";
 assert_secret() {
