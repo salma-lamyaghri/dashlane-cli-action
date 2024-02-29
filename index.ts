@@ -1,12 +1,12 @@
-import * as exec from "@actions/exec";
+import { getExecOutput } from "@actions/exec";
 
 const retrieveSecrets = async () => {
-  await exec.getExecOutput(`./script.sh`);
+  await getExecOutput(`./script.sh`);
 };
 
 const installCli = async () => {
-  await exec.getExecOutput(`./install.sh`);
+  await getExecOutput(`./install.sh`);
 };
 
-installCli();
-retrieveSecrets();
+await installCli();
+await retrieveSecrets();
