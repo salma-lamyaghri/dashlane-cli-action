@@ -10,32 +10,28 @@ echoSuccess() {
 }
 
 check_credentials() {
+    
     # Check all Dashlane and access keys are provided
-    # Make them available to the current step through env variables
+    # Make them available to the current step through env vari
 
-    OP_CONNECT_HOST="${INPUT_CONNECT_HOST:-$OP_CONNECT_HOST}"
-    if [ -n "$DASHLANE_DEVICE_ACCESS_KEY" ]; then
-        echo "DASHLANE_DEVICE_ACCESS_KEY=$DASHLANE_DEVICE_ACCESS_KEY" >> $GITHUB_ENV
-    else 
+    if [ -z "$DASHLANE_DEVICE_ACCESS_KEY" ]; then
         echoError "DASHLANE_DEVICE_ACCESS_KEY is missing"
+        exit 1
     fi
 
-    if [ -n "$DASHLANE_DEVICE_SECRET_KEY" ]; then
-        echo "DASHLANE_DEVICE_SECRET_KEY=$DASHLANE_DEVICE_SECRET_KEY" >> $GITHUB_ENV
-    else 
+    if [ -z "$DASHLANE_DEVICE_SECRET_KEY" ]; then
         echoError "DASHLANE_DEVICE_SECRET_KEY is missing"
+        exit 1
     fi
 
-    if [ -n "$DASHLANE_LOGIN" ]; then
-        echo "DASHLANE_LOGIN=$DASHLANE_LOGIN" >> $GITHUB_ENV
-    else 
+    if [ -z "$DASHLANE_LOGIN" ]; then
         echoError "DASHLANE_LOGIN is missing"
+        exit 1
     fi
 
-    if [ -n "$DASHLANE_MASTER_PASSWORD" ]; then
-        echo "DASHLANE_MASTER_PASSWORD=$DASHLANE_MASTER_PASSWORD" >> $GITHUB_ENV
-    else 
+    if [ -z "$DASHLANE_MASTER_PASSWORD" ]; then
         echoError "DASHLANE_MASTER_PASSWORD is missing"
+        exit 1
     fi
 
 }

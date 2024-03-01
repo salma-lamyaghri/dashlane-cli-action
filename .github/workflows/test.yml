@@ -13,6 +13,10 @@ jobs:
         uses: ./ # Dashlane/github-action@<version>
         env:
           ACTION_SECRET: dl://918E3113-CA48-4642-8FAF-CE832BDED6BE/password
+          # DASHLANE_DEVICE_ACCESS_KEY: ${{ secrets.DASHLANE_DEVICE_ACCESS_KEY }}
+          # DASHLANE_DEVICE_SECRET_KEY: ${{ secrets.DASHLANE_DEVICE_SECRET_KEY }}
+          # DASHLANE_LOGIN: ${{ secrets.DASHLANE_LOGIN }}
+          # DASHLANE_MASTER_PASSWORD: ${{ secrets.DASHLANE_MASTER_PASSWORD }}
       - name: Assert test secret values
         env:
           ACTION_SECRET: ${{ steps.load_secrets.outputs.ACTION_SECRET }}
