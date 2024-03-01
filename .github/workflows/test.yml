@@ -1,4 +1,4 @@
-name: Verify
+name: test_dashlane_action
 
 on: push
 

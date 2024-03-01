@@ -1,12 +1,7 @@
 import { getExecOutput } from "@actions/exec";
 
-const retrieveSecrets = () => {
+const main = () => {
   getExecOutput(`./script.sh`);
 };
 
-const installCli = () => {
-  getExecOutput(`./install.sh`);
-};
-
-installCli();
-retrieveSecrets();
+main();

@@ -10,4 +10,6 @@ assert_secret() {
 
 assert_secret "ACTION_SECRET" "action_test"
 
-
+# check with multiple passwords 
+# check with no credentials 
+# check with no vault path  
