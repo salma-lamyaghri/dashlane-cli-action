@@ -8,8 +8,6 @@ assert_secret() {
   fi
 }
 
-assert_secret "ACTION_SECRET" "action_test"
-
-# check with multiple passwords 
-# check with no credentials 
-# check with no vault path  
+assert_secret "ACTION_SECRET_PASSWORD" "action_test"
+assert_secret "ACTION_SECRET_NOTE" "action_test"
+ 

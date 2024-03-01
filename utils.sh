@@ -10,7 +10,7 @@ echoSuccess() {
 }
 
 check_credentials() {
-    
+
     # Check all Dashlane and access keys are provided
     # Make them available to the current step through env vari
 
@@ -81,7 +81,8 @@ read_secrets() {
     done
 
     if [[$is_dashlane_vault_path_found == $false]]; then
-        echoError "No dashlane vauld path has been found" 
+        echoError "No dashlane vault path has been found" 
+        exit 0
     fi
 }
 
