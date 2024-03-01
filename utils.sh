@@ -69,16 +69,18 @@ read_secrets() {
     echo "syncronizing .."
     ./dcli sync
 
+    is_dashlane_vault_path_found=0
+
     for path in $env_variables; do
         # Check if the value of the variable starts with "dl://"
         if [[ "${!path}" =~ dl://* ]]; then
-            is_dashlane_vault_path_found=$true
+            is_dashlane_vault_path_found=1
             echo "reading $path"
             echo "$path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT"
         fi
     done
 
-    if [[ -z $is_dashlane_vault_path_found ]]; then
+    if [ $is_dashlane_vault_path_found == 0 ]; then
         echoError "No dashlane vault path has been found" 
         exit 0
     fi
