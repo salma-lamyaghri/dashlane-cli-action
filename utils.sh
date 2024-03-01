@@ -66,8 +66,6 @@ read_secrets() {
 
     env_variables=$(printenv | sed 's;=.*;;' | sort)
 
-    is_dashlane_vault_path_found=$false
-
     echo "syncronizing .."
     ./dcli sync
 
@@ -80,7 +78,7 @@ read_secrets() {
         fi
     done
 
-    if [[ $is_dashlane_vault_path_found == $false ]]; then
+    if [[ -z $is_dashlane_vault_path_found ]]; then
         echoError "No dashlane vault path has been found" 
         exit 0
     fi
