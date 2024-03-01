@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e
 
-echo "Installing Dashlane cli ..on $OSTYPE."
+echo "Installing Dashlane cli ..on OS $OSTYPE."
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Get runner's architecture
     ARCH=$(uname -m)
+    echo "Installing Dashlane cli ..on ARCHI $ARCH."
 
     if [[ "$ARCH" != "x86_64" ]] && [[ "$ARCH" != "aarch64" ]]; then
         echo "Unsupported architecture for the Dashlane CLI: $ARCH."
