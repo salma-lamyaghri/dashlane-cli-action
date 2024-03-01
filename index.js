@@ -1,7 +1,7 @@
 import { getExecOutput } from "@actions/exec";
 
 const main = () => {
-  getExecOutput(`./main.sh`);
+  getExecOutput(`./script.sh`);
 };
 
 main();

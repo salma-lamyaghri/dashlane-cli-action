@@ -1329,7 +1329,7 @@ var __webpack_exports__ = {};
 
 
 const main = () => {
-  (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.getExecOutput)(`./main.sh`);
+  (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.getExecOutput)(`./script.sh`);
 };
 
 main();
