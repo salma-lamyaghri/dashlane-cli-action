@@ -4,7 +4,11 @@ Developers can retrieve their secrets directly from Dashlane vault using the Git
 
 ## Requirements
 
-- todo
+- to do
+
+## How to generate dist folder
+
+- to do
 
 ## How to use
 
