@@ -2,10 +2,10 @@
 set -e
 
 assert_no_secret() {
-    if [ -z "$ACTION_SECRET_PASSWORD" ]; then
+    if [ -z "$(printenv $1)" ]; then
         exit 0
     fi
 }
 
-assert_secret "ACTION_SECRET_PASSWORD" 
+assert_no_secret "ACTION_SECRET_PASSWORD" 
  
