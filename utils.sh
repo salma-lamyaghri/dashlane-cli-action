@@ -40,29 +40,6 @@ check_credentials() {
 
 }
 
-read_secrets() { 
-
-    env_variables=$(printenv | sed 's;=.*;;' | sort)
-
-    is_dashlane_vault_path_found=$false
-
-    echo "syncronizing .."
-    ./dcli sync
-
-    for path in $env_variables; do
-        # Check if the value of the variable starts with "dl://"
-        if [[ "${!path}" =~ dl://* ]]; then
-            is_dashlane_vault_path_found=$true
-            echo "reading $path"
-            echo "$path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT"
-        fi
-    done
-
-    if [[$is_dashlane_vault_path_found == $false]]; then
-        echoError "No dashlane vauld path has been found" 
-    fi
-}
-
 install_cli() {
     echo "Installing Dashlane cli ..on OS $OSTYPE."
 
@@ -88,3 +65,30 @@ install_cli() {
 
     chmod +x ./dcli
 }
+
+read_secrets() { 
+
+    check_credentials
+    install_cli
+
+    env_variables=$(printenv | sed 's;=.*;;' | sort)
+
+    is_dashlane_vault_path_found=$false
+
+    echo "syncronizing .."
+    ./dcli sync
+
+    for path in $env_variables; do
+        # Check if the value of the variable starts with "dl://"
+        if [[ "${!path}" =~ dl://* ]]; then
+            is_dashlane_vault_path_found=$true
+            echo "reading $path"
+            echo "$path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT"
+        fi
+    done
+
+    if [[$is_dashlane_vault_path_found == $false]]; then
+        echoError "No dashlane vauld path has been found" 
+    fi
+}
+
