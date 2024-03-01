@@ -80,7 +80,7 @@ read_secrets() {
         fi
     done
 
-    if [[$is_dashlane_vault_path_found == $false]]; then
+    if [[ $is_dashlane_vault_path_found == $false ]]; then
         echoError "No dashlane vault path has been found" 
         exit 0
     fi
