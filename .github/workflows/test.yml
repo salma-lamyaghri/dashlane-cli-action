@@ -36,3 +36,7 @@ jobs:
           DASHLANE_DEVICE_SECRET_KEY: ${{ secrets.DASHLANE_DEVICE_SECRET_KEY }}
           DASHLANE_LOGIN: ${{ secrets.DASHLANE_LOGIN }}
           DASHLANE_MASTER_PASSWORD: ${{ secrets.DASHLANE_MASTER_PASSWORD }}
+      - name: Test with no entries
+        env:
+          ACTION_SECRET_PASSWORD: ${{ steps.load_secrets.outputs.ACTION_SECRET_PASSWORD }}
+        run: ./test_no_entries.sh

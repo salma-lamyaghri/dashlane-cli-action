@@ -74,7 +74,7 @@ read_secrets() {
     for path in $env_variables; do
         # Check if the value of the variable starts with "dl://"
         if [[ "${!path}" =~ dl://* ]]; then
-            is_dashlane_vault_path_found=$true
+            $is_dashlane_vault_path_found=$true
             echo "reading $path"
             echo "$path=$(./dcli read ${!path})" >> "$GITHUB_OUTPUT"
         fi
