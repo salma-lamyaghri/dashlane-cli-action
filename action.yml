@@ -6,4 +6,4 @@ branding:
   color: grey
 runs:
   using: node20
-  main: index.js
+  main: dist/index.js
