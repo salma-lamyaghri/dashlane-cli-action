@@ -1,28 +1,43 @@
 # Dashlane CLI Action
 
-Developers can retrieve their secrets directly from Dashlane vault using the GitHub Action dashlane-cli-action.
+## About
+
+`dashlane-cli-action` is built using `Dashlane CLI` and `Github Actions`. It allows developers to inject their secrets vault from Dashlane to their github workfow.
 
 ## Requirements
 
-- to do
+- `Dashlane CLI`for device registration
+- `Node.js` and `npm`to run the project locally
 
-## How to generate dist folder
+## How to run this project locally
 
-- to do
+1- install dependencies:
+
+```sh
+npm i
+```
+
+2- any change to the `index.js` requires a local build so that the the `dist` folder gets updated :
+
+```sh
+ncc build src/index.js
+```
 
 ## How to use
 
-### 1- Register your device locally
+1- Register your device locally
 
 ```sh
 dcli devices register "server-name"
 ```
 
-### 2- Set the environment variables prompted by the previous step in your GitHub repository’s secrets and variables
+For more details refer to Dashlane CLI documentation https://dashlane.github.io/dashlane-cli
+
+2- Set the environment variables prompted by the previous step in your GitHub repository’s secrets and variables
 
 ![Github Secrets](./documentation/github_secrets.png)
 
-### 3- Set the same env variables in your pipeline as well as the ids of the secrets you want to read from Dashlane starting with `dl://`
+3- Set the same env variables in your pipeline as well as the ids of the secrets you want to read from Dashlane starting with `dl://`
 
 ```yml
 steps:
@@ -39,7 +54,7 @@ steps:
       DASHLANE_MASTER_PASSWORD: ${{ secrets.DASHLANE_MASTER_PASSWORD }}
 ```
 
-### 4- Retrieve your secrets in any next step of your pipeline using `GITHUB_OUTPUT`
+4- Retrieve your secrets in any next step of your pipeline using `GITHUB_OUTPUT`
 
 ```yml
 - name: test secret values
