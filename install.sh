@@ -19,4 +19,6 @@ else
     exit 1
 fi
 
+echo "Successfuly installed Dashlane CLI on $OSTYPE."
+
 chmod +x ./dcli
