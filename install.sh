@@ -14,6 +14,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     fi
 
     curl -sSfLo dcli  https://github.com/Dashlane/dashlane-cli/releases/download/v6.2405.0/dcli-linux-x64
+    echo "Successfuly installed Dashlane CLI on LINUX"
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     curl -sSfLo dcli  https://github.com/Dashlane/dashlane-cli/releases/download/v6.2405.0/dcli-macos-arm64
