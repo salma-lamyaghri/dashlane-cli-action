@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Installing Dashlane cli ..."
+echo "Installing Dashlane cli ..on $OSTYPE."
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Get runner's architecture
