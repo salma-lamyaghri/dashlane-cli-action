@@ -37,7 +37,7 @@ check_credentials() {
 }
 
 install_cli() {
-    echo "Installing Dashlane cli ..on OS $OSTYPE."
+    echo "Installing Dashlane cli on OS $OSTYPE."
 
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         # Get runner's architecture

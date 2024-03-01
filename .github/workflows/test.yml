@@ -24,7 +24,7 @@ jobs:
           ACTION_SECRET_NOTE: ${{ steps.load_secrets.outputs.ACTION_SECRET_NOTE }}
         run: ./test.sh
   test_action_no_entries:
-    name: Load secrets
+    name: Load secrets - no entries
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
