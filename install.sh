@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo "Installing Dashlane cli ..."
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Get runner's architecture
     ARCH=$(uname -m)
