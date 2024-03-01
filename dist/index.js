@@ -1328,16 +1328,11 @@ var __webpack_exports__ = {};
 /* harmony import */ var _actions_exec__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(411);
 
 
-const retrieveSecrets = () => {
-  (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.getExecOutput)(`./script.sh`);
+const main = () => {
+  (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.getExecOutput)(`./main.sh`);
 };
 
-const installCli = () => {
-  (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.getExecOutput)(`./install.sh`);
-};
-
-installCli();
-retrieveSecrets();
+main();
 
 })();
 

@@ -68,9 +68,6 @@ install_cli() {
 
 read_secrets() { 
 
-    check_credentials
-    install_cli
-
     env_variables=$(printenv | sed 's;=.*;;' | sort)
 
     is_dashlane_vault_path_found=$false
